@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { settlementController } from "../controllers/settlement.controller";
+import transactionRouter from "../routes/transaction.router";
 
 const router = Router();
 
@@ -9,5 +10,6 @@ router.get("/", (req, res) => {
 });
 
 router.post("/settle-amount", settlementController);
+router.post("/transaction", transactionRouter);
 
 export default router;

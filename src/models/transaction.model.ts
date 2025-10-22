@@ -19,6 +19,7 @@ const transactionSchema = new mongoose.Schema({
 
 transactionSchema.index({ groupId: 1, active: 1, transactionDate: -1 });
 transactionSchema.index({ groupId: 1, transactionDate: -1 });
+transactionSchema.index({ slug: 1 });
 
 const TransactionDb = mongoose.model("transaction", transactionSchema);
 export default TransactionDb;
