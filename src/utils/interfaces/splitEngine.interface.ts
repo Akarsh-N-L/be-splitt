@@ -1,12 +1,15 @@
-// Define interfaces for type safety
-interface Expenses {
-  [person: string]: number;
+// Transaction Input Interface
+interface ITransaction {
+  paidBy: string[]; // Can have multiple payees
+  amount: number;
+  splitAmong: string[]; // Members who share this expense
 }
 
-interface Settlement {
-  payer: string;
+// Settlement Output Interface
+interface ISettlement {
+  payee: string;
   receiver: string;
   amount: number;
 }
 
-export { Expenses, Settlement };
+export { ISettlement, ITransaction };

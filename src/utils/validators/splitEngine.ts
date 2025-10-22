@@ -1,9 +1,15 @@
 import { z } from "zod";
 
-const splitEngineValidator = z.object({
+const expenseEngineInput = z.object({
   data: z.object({
-    balances: z.record(z.string(), z.number()),
+    transactions: z.array(
+      z.object({
+        paidBy: z.array(z.string()),
+        amount: z.number(),
+        splitAmong: z.array(z.string()),
+      })
+    ),
   }),
 });
 
-export { splitEngineValidator };
+export { expenseEngineInput };
