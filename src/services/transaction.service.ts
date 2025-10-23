@@ -1,6 +1,5 @@
 import TransactionDb from "../models/transaction.model";
 import { IFullTransaction } from "../utils/interfaces/transaction.interface";
-import mongoose from "mongoose";
 
 const addTransaction = async (transactionData: IFullTransaction) => {
   const transaction = new TransactionDb({
@@ -38,4 +37,4 @@ const getTransactionById = async (transactionId: string) => {
   };
 };
 
-export { addTransaction };
+export default { addTransaction };
